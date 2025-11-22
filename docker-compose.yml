@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:18.1
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: session-auth
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - db_data:/var/lib/postgresql/
+
+volumes:
+  db_data:
